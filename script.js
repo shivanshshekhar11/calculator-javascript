@@ -123,8 +123,15 @@ numbutton.forEach((num)=>{
 
 opbutton.forEach((operation)=>{
     operation.addEventListener("click",(e)=>{
+        var ch = res.textContent.slice(-1);
+
+        if(ch=="."){
+            alert("Nothing after the floating point");
+            return;
+        }
+
         if(opflag==1){
-            alert("Already one operation");
+            alert("Already one operation OR no number");
             return;
         }
 
@@ -175,6 +182,17 @@ dot.addEventListener("click",()=>{
 })
 
 equals.addEventListener("click",()=>{
+    var ch = res.textContent.slice(-1);
+
+    if(ch=="."){
+        alert("Nothing after the floating point");
+        return;
+    }
+
+    if((ch=="+")||(ch=="-")||(ch=="*")||(ch=="/")||(ch=="%")||(ch=="^")){
+        alert("Nothing after the operator");
+        return;
+    }
 
     if(expflag == 1){
         exp.textContent=res.textContent;
