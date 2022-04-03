@@ -19,14 +19,18 @@ function div (a,b){
 }
 
 function mod (a,b){
-    if((b==0)||(String(a).includes("."))){
-        alert("Modulus by 0 OR a floating point number");
+    if((b==0)){
+        alert("Modulus by 0");
         return a;
     }
     return parseFloat((a%b).toFixed(5));
 }
 
 function pow (a,b){
+    if((String(a).includes("-"))&&(String(b).includes("."))){
+        alert("Imaginary result");
+        return a;
+    }
     return parseFloat((a**b).toFixed(5));
 }
 
